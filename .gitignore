@@ -2,3 +2,5 @@
 * .pyc
 result.txt
 __pycache__/*
+* .jpg
+archive/*
