@@ -2,7 +2,7 @@ import time
 import argparse
 from image import get_image
 from image import archive_image
-#from mlearn import keras_detect
+from mlearn import keras_detect
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--interval", help="Timer interval", type=int, default=180)
@@ -21,11 +21,13 @@ if cycle <=0 or cycle >=99:
 results = open("result.txt", "a")
 
 def sensor_run():
+    imageName = "sampleImage.jpg"
     try:
         while True:
-            get_image()
-            #prediction = keras_detect()
+            get_image(imageName)
+            prediction = keras_detect(imageName)
             #results.write(prediction)
+            print(prediction)
             #filter_rotate()
             archive_image()
             time.sleep(isec)

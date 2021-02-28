@@ -2,7 +2,7 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 
-def keras_detect():
+def keras_detect(imageName):
     
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)
@@ -16,7 +16,7 @@ def keras_detect():
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
     
     # Replace this with the path to your image
-    image = Image.open('test_photo.jpg')
+    image = Image.open(imageName)
     
     #resize the image to a 224x224 with the same strategy as in TM2:
     #resizing the image to be at least 224x224 and then cropping from the center

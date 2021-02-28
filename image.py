@@ -1,8 +1,9 @@
 import os
 import datetime
 
-def get_image():
-    os.system("fswebcam --no-banner sampleImage.jpg")
+def get_image(imageName):
+    cmd = "fswebcam --no-banner %s" % imageName
+    os.system(cmd)
 
 def archive_image():
     currentTime = datetime.datetime.now()
