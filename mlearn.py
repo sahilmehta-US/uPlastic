@@ -2,7 +2,7 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 
-def keras_detect()
+def keras_detect():
     
     # Disable scientific notation for clarity
     np.set_printoptions(suppress=True)

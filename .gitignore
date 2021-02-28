@@ -1,0 +1,4 @@
+#ignore .pyc
+* .pyc
+result.txt
+__pycache__/*
