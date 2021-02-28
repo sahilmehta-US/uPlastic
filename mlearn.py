@@ -2,6 +2,12 @@ import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 
+def get_labels(labelFile):
+    f = open(labelFile, "r")
+    data = f.read()
+    print(data)
+
+
 def keras_detect(imageName):
     
     # Disable scientific notation for clarity

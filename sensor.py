@@ -3,6 +3,7 @@ import argparse
 from image import get_image
 from image import archive_image
 from mlearn import keras_detect
+from mlearn import get_labels
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--interval", help="Timer interval", type=int, default=180)
@@ -22,6 +23,8 @@ results = open("result.txt", "a")
 
 def sensor_run():
     imageName = "sampleImage.jpg"
+    get_labels("labels.txt")
+    exit(0)
     try:
         while True:
             get_image(imageName)
