@@ -24,10 +24,10 @@ def sensor_run():
     try:
         while True:
             get_image()
-            archive_image()
-            #filter_rotate()
             #prediction = keras_detect()
             #results.write(prediction)
+            #filter_rotate()
+            archive_image()
             time.sleep(isec)
     except KeyboardInterrupt:
         pass
