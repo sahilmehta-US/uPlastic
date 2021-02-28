@@ -1,5 +1,6 @@
 import time
 import argparse
+import numpy as np
 from image import get_image
 from image import archive_image
 from mlearn import keras_detect
@@ -23,14 +24,18 @@ results = open("result.txt", "a")
 
 def sensor_run():
     imageName = "sampleImage.jpg"
-    get_labels("labels.txt")
-    exit(0)
+    labels = get_labels("labels.txt")
     try:
         while True:
             get_image(imageName)
             prediction = keras_detect(imageName)
             #results.write(prediction)
             print(prediction)
+            index = np.argmax(prediction)
+            score = prediction[0][index]
+            label = labels[index]
+            id = "{0} {1}\n".format(score*100, label)
+            results.write(id)
             #filter_rotate()
             archive_image()
             time.sleep(isec)

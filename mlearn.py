@@ -4,8 +4,11 @@ import numpy as np
 
 def get_labels(labelFile):
     f = open(labelFile, "r")
-    data = f.read()
-    print(data)
+    labelData = []
+    for line in f:
+        label = line.split()[1]
+        labelData.append(label)
+    return labelData
 
 
 def keras_detect(imageName):
