@@ -23,7 +23,6 @@ def sensor_run():
         while True:
             get_image(imageName)
             prediction = keras_detect(imageName)
-            #results.write(prediction)
             print(prediction)
             index = np.argmax(prediction)
             score = prediction[0][index]
