@@ -5,6 +5,7 @@ from image import get_image
 from image import archive_image
 from mlearn import keras_detect
 from mlearn import get_labels
+from filter import filter_rotate
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--interval", help="Timer interval", type=int, default=180)
