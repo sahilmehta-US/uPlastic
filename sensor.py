@@ -9,16 +9,10 @@ from mlearn import get_labels
 parser = argparse.ArgumentParser()
 parser.add_argument("--interval", help="Timer interval", type=int, default=180)
 parser.add_argument("--delay", help="Delay interval", type=int, default=1)
-parser.add_argument("--cycle", help="Duty cycle", type=int, default=1)
 args = parser.parse_args()
 
 isec = args.interval
 dsec = args.delay
-cycle = args.cycle
-
-if cycle <=0 or cycle >=99:
-   print("Duty Cycle %d is outside range 0-100" % cycle)
-   exit(0)
 
 results = open("result.txt", "a")
 
@@ -36,7 +30,7 @@ def sensor_run():
             label = labels[index]
             id = "{0} {1}\n".format(score*100, label)
             results.write(id)
-            #filter_rotate()
+            filter_rotate(dsec)
             archive_image()
             time.sleep(isec)
     except KeyboardInterrupt:
