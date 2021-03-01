@@ -20,7 +20,7 @@ results = open("result.txt", "a")
 
 def sensor_run():
     imageName = "sampleImage.jpg"
-    labels = get_labels("labels.txt")
+    labels = get_labels("model/labels.txt")
     try:
         while True:
             get_image(imageName)
