@@ -9,7 +9,8 @@ from filter import filter_rotate
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--interval", help="Timer interval", type=int, default=180)
-parser.add_argument("--delay", help="Delay interval", type=int, default=1)
+parser.add_argument("--delay", help="Delay interval", type=int, default=2)
+parser.add_argument("--rotate", help="Filter rotate", action='store_true')
 args = parser.parse_args()
 
 isec = args.interval
@@ -37,6 +38,9 @@ def sensor_run():
         pass
 
 if __name__ == "__main__":
+    if args.rotate:
+        filter_rotate(dsec)
+        exit(0)
     sensor_run()
     results.close()
     

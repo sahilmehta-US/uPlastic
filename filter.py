@@ -1,3 +1,4 @@
+import time
 import RPi.GPIO as GPIO
 
 servoPIN = 17
@@ -14,7 +15,6 @@ def filter_rotate(dsec):
         time.sleep(dsec)
         p.ChangeDutyCycle(10)
         time.sleep(dsec)
-    except KeyboardInterrupt:
-        pass
+    except:
+        GPIO.cleanup()
     p.stop()
-    GPIO.cleanup()
