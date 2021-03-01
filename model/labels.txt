@@ -1,0 +1,8 @@
+0 Blank
+1 Plastic
+2 Nylon
+3 Leaves
+4 Grass
+5 Twigs
+6 Petal
+7 Rocks
