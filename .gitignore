@@ -1,6 +1,6 @@
 #ignore .pyc
-* .pyc
-result.txt
+*.pyc
+./result.txt
 __pycache__/*
-* .jpg
+*.jpg
 archive/*
