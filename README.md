@@ -21,7 +21,7 @@ Export Keras Model
 
 unzip converted_keras.zip
 
-### SEensor Procedures
+### Sensor Procedures
 
 
 1. git clone https://github.com/sahilmehta-US/uPlastic
